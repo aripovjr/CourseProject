@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const User = require("./models/userModel");
+const Collection = require("./models/collectionModel");
 const registerRoute = require("./routes/register");
 const loginRoute = require("./routes/login");
 const dashboardRoute = require("./routes/dashboard");
 const userRoute = require("./routes/userRoute");
 const users = require("./routes/users");
+const collection = require("./routes/collection");
 require("dotenv").config();
 
 const app = express();
@@ -16,12 +18,16 @@ app.use(cors());
 User.sync().then(() => {
   console.log("Database has been synced.");
 });
+Collection.sync().then(() => {
+  console.log("Collaction has been synced.");
+});
 
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
 app.use("/dashboard", dashboardRoute);
 app.use("/user", userRoute);
 app.use("/users", users);
+app.use("/collection", collection);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

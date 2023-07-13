@@ -8,6 +8,7 @@ const dashboardRoute = require("./routes/dashboard");
 const userRoute = require("./routes/userRoute");
 const users = require("./routes/users");
 const collection = require("./routes/collection");
+const getCollection = require("./routes/getCollections");
 require("dotenv").config();
 
 const app = express();
@@ -28,6 +29,7 @@ app.use("/dashboard", dashboardRoute);
 app.use("/user", userRoute);
 app.use("/users", users);
 app.use("/collection", collection);
+app.use("/getCollections", getCollection);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

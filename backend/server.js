@@ -25,11 +25,12 @@ Collection.sync().then(() => {
 
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
-app.use("/dashboard", dashboardRoute);
 app.use("/user", userRoute);
 app.use("/users", users);
 app.use("/collection", collection);
 app.use("/getCollections", getCollection);
+
+app.use("/dashboard", dashboardRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

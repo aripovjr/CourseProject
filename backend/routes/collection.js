@@ -6,6 +6,7 @@ const router = Router();
 
 router.post("/", async (req, res) => {
   const { name, topic, description, authorName, authorRole } = req.body;
+  console.log(req.body);
   try {
     const collection = await Collection.build({
       id: uuidv4(),

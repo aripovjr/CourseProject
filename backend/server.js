@@ -27,7 +27,7 @@ app.use("/register", registerRoute);
 app.use("/login", loginRoute);
 app.use("/user", userRoute);
 app.use("/users", users);
-app.use("/collection", collection);
+app.use("/collections", collection);
 app.use("/getCollections", getCollection);
 
 app.use("/dashboard", dashboardRoute);
